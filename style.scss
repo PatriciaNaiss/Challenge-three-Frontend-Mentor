@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+$bright-orange:	#e38826;
+$dark-cyan: #006970;
+$very-dark-cyan: #004241;
+$transparent-white: #ffffff75;
+$light-gray: #f2f2f2;
+$font-lexend: 'Lexend Deca', sans-serif;
+$font-display: 'Big Shoulders Display', cursive;
+$font-400: 400;
+$font-700: 700;
+
+@mixin tablet {
+  @media screen and (max-width: 1000px){
+    @content;
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 20px;
+  color: $transparent-white;
+  font-family: $font-lexend;
+  font-weight: $font-400;
+  @include tablet {
+  padding: 20px;
+  font-size: 12px;
+}
+}
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  @include tablet{
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr 1fr 1fr;
+  }
+}
+article {
+  display: flex;
+  flex-flow: wrap column;
+  align-items: flex-start;
+  padding: 40px;
+  &:first-child{
+    border-radius: 10px 0 0 10px;
+    @include tablet{
+      border-radius: 10px 10px 0 0;
+    }
+  }
+  &:last-child{
+    border-radius: 0 10px 10px 0;
+    @include tablet{
+    border-radius: 0 0 10px 10px;
+    }
+  }
+  img {
+    width: 50px;
+  }
+  h1 {
+    font-family: $font-display;
+    font-weight: $font-400;
+    font-size: 35px;
+    color: $light-gray;
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+}
+.sedans {
+  background-color: $bright-orange;
+  a {
+    color: $bright-orange;
+  }
+}
+.suv {
+  background-color: $dark-cyan;
+  a {
+    color: $dark-cyan;
+  }
+}
+.luxury {
+  background-color: $very-dark-cyan;
+  a{
+    color:$very-dark-cyan;
+  }
+}
+a {
+  margin-top: auto;
+  background-color: $light-gray;
+  padding: 12px 25px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 15px;
+  @include tablet {
+    font-size: 12px;
+  }
+
+}
+a:hover {
+   background-color: transparent;
+   border: 1px solid $light-gray;
+   color: $light-gray;
+ }

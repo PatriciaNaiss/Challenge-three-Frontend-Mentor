@@ -1,0 +1,12 @@
+{
+  "name": "column-friendly",
+  "version": "1.0.0",
+  "description": "![Design preview for the 3-column preview card component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch style.scss main.css & live-server",
+    "build:dev": "sass --watch style.scss main.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
